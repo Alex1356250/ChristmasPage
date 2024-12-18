@@ -2,11 +2,10 @@ import '../index.css';
 
 function Footer() {
     return (
-        <div>
+        <div className="footer">
             <p>Règles</p>
+            <p>© WildCode School 2024</p>
             <p>A propos</p>
-            <p>© 2024</p>
-            <p>Mentions légals</p>
         </div>
     )
 }

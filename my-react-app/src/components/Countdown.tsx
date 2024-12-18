@@ -1,5 +1,6 @@
 import '../index.css';
 import { useState, useEffect } from 'react';
+import gift from '../../public/gift.png';
 
 const Countdown = () => {
     const second = 1000
@@ -51,11 +52,16 @@ const Countdown = () => {
             {isChristmas ? (
                 <h1>It's Christmas Time!</h1>
             ) : (
-                <div id="countdown">
+                <div className="countdown-container">
+                    <div className="gift-container">
+                        <img src={gift} alt="gift" className="gift" />
+                    </div>
+                <div className="countdown">
                     <div id="days">{days} jours</div>
                     <div id="hours">{hours} heures</div>
                     <div id="minutes">{minutes} minutes</div>
                     <div id="seconds">{seconds} secondes</div>
+                </div>
                 </div>
             )}
         </div>
