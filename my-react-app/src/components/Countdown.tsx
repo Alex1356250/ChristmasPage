@@ -2,7 +2,7 @@ import '../index.css';
 import { useState, useEffect } from 'react';
 import gift from '../../public/gift.png';
 
-const Countdown = () => {
+function Countdown() {
     const second = 1000
     const minute = second * 60
     const hour = minute * 60
@@ -47,6 +47,14 @@ const Countdown = () => {
     const minutes = Math.floor((distance % hour) / minute);
     const seconds = Math.floor((distance % minute) / second);
 
+    // Bouton vers gift
+   
+    function monTimer(event: React.MouseEvent<HTMLButtonElement>) {
+           event.preventDefault();
+        alert("Et le compteur il sert à quoi?? Revenez quand il sera l'heure d'être sage!");
+    }
+
+
     return (
         <div>
             {isChristmas ? (
@@ -54,7 +62,7 @@ const Countdown = () => {
             ) : (
                 <div className="countdown-container">
                     <div className="gift-container">
-                        <img src={gift} alt="gift" className="gift" />
+                    <button type="button" className="button" onClick={monTimer}><img src={gift} alt="gift" className="gift" id="gift"/></button>
                     </div>
                 <div className="countdown">
                     <div id="days">{days} jours</div>
